@@ -24,7 +24,15 @@
       <div>
         <hr>
         <br>
-        <h4>Added to Cart</h4><br>
+        <div class="d-flex justify-content-between font-weight-bold" style="font-size: 25px;">
+          <div>Added to Cart</div>
+          <div>
+            <button
+              class="btn btn-outline-secondary"
+            >Orders</button>
+          </div>
+        </div>
+        <br>
         <div *ngFor="let item of addedItems"
           class="d-flex justify-content-between p-2">
           <div>{{item.name}}</div>

@@ -13,6 +13,7 @@ export class AppComponent {
   weapons: Item[];
   addedItems: Item[];
   total = 0;
+  orders: Item[];
 
   constructor(private appService: AppServiceService, public toastr: ToastrService) {}
    
@@ -42,7 +43,14 @@ export class AppComponent {
   }
 
   onBuy($event){
-    this.toastr.success('Transaction Successful');
+    if(this.addedItems.length !== 0 || this.total !== 0) {
+      this.toastr.success('Transaction Successful');
+      // could be sent to some Service of Buy orders
+      this.orders = [...this.addedItems];
+    } else {
+      this.toastr.warning('No Item in Cart');
+    }
+
   }
 
 }

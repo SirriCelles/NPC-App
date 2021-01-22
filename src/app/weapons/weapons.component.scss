@@ -1,0 +1,31 @@
+*{
+    font-size: 16px;
+    // line-height: 0.5cm;   
+}
+
+
+h4 {
+    font-size: 20px;
+}
+
+#weapon-card {
+    padding:0 !important;
+    // margin-right: 0 !important;
+    margin: 10px !important;
+    width: 300px;
+    height: 420px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#text-desc{
+    line-height: 0.4cm !important;
+    font-size: 14px;;
+}
+
+.image-responsive {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 130px;
+    margin: 0 auto;
+}

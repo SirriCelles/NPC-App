@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-md-12 col-lg-11 d-flex flex-column">
+      <br>
+      <div>
+        <h2 class="title-page text-center">NPC App</h2><br>
+        <div class="text-left">Hello Adventurer, welcome to the town of Angular!
+          Here you can explore all the exciting stuff like meeting weird monster, learning new spell, and discovering rare item.
+          But first, you need some weapon/spell to accompany you along the way!
+          I will give you 1000 gold, so choose your weapon/spell wisely~
+        </div><br><br>
+      </div>
+      <div class="card-deck align-self-center ml-2">
+        <app-weapons *ngFor="let weapon of weapons"
+          [name]="weapon.name"
+          [image]="weapon.image"
+          [price]="weapon.price"
+          [desc]="weapon.desc"
+          [cartVal]="weapon.addedToCart"
+          (addToCartStatus)="setCartStatus($event)"
+        ></app-weapons>
+      </div>
+      <div>
+        <hr>
+        <br>
+        <h4>Added to Cart</h4><br>
+        <div *ngFor="let item of addedItems"
+          class="d-flex justify-content-between p-2">
+          <div>{{item.name}}</div>
+          <div>{{item.price}}</div>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <div class="font-weight-bold" style="font-size: 25px;">
+           Total:
+          </div>  
+          <div>{{total}}</div>         
+        </div>  
+        <br>  
+        <div class="text-center">
+          <button 
+            class="btn btn-primary w-50 rounded-0 shadow"
+            (click)="onBuy($event)"
+          >Buy</button>
+        </div>  
+        <br>  
+      </div>
+    </div>
+  </div>
+</div>

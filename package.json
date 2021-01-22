@@ -3,11 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "heroku-postbuild": "ng-build --prod",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
+  },
+  "engine": {
+    "node": "12.18.3",
+    "npm": "6.10.3"
   },
   "private": true,
   "dependencies": {
@@ -21,10 +26,13 @@
     "@angular/router": "~8.2.0",
     "boostrap": "^2.0.0",
     "bootstrap": "^4.6.0",
+    "express": "^4.17.1",
     "jquery": "^3.5.1",
     "ngx-toastr": "^10.0.4",
+    "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "typescript": "~3.5.3",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {

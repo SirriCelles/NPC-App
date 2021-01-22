@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "postinstall": "ng build --aot --prod",
+    "postinstall": "ng build --aot --target=production",
     "heroku-postbuild": "ng-build --prod",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -17,6 +17,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~8.2.2",
+    "@angular/compiler-cli": "~8.2.0",
     "@angular/animations": "^8.2.14",
     "@angular/common": "~8.2.0",
     "@angular/compiler": "~8.2.0",
@@ -38,8 +40,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.2",
-    "@angular/cli": "~8.2.2",
-    "@angular/compiler-cli": "~8.2.0",
     "@angular/language-service": "~8.2.0",
     "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
@@ -54,7 +54,6 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "tslint": "~5.15.0"
   }
 }
